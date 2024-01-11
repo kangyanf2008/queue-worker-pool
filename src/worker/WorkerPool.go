@@ -29,7 +29,7 @@ func (wp *WokerPool) Run() *WokerPool {
 	for i:=0; i < Max_Worker_Pool_Size; i++ {
 		worker := NewWorker()
 		wp.Worker = append(wp.Worker, worker)
-		worker.Run(wp.WorkerQueue)   //工作协和队列
+		worker.Run(wp.WorkerQueue)   //工作协程队列
 	}
 	go func() {
 		for {
