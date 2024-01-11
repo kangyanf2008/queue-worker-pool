@@ -1,6 +1,6 @@
 package worker
 
-//工作协和池
+//工作协程池
 type WokerPool struct {
 	Worker []*Worker
 	quit chan bool
@@ -49,6 +49,6 @@ func (wp *WokerPool) Run() *WokerPool {
 	return wp
 }
 
-func (d *WokerPool) Stop(){
-	d.quit<-true
+func (wp *WokerPool) Stop(){
+	wp.quit<-true
 }
