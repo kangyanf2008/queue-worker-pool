@@ -15,7 +15,7 @@ func NewWokerPool(wokerNum int) *WokerPool {
 		maxWokerNum = MAX_QUEUE_SIZE
 	}
 	return &WokerPool{
-			WorkerQueue: make(chan chan Job, Max_Worker_Pool_Size), //工作协和数
+			WorkerQueue: make(chan chan Job, Max_Worker_Pool_Size), //工作协程数
 			queue: make(chan Job, maxWokerNum)}                  //请求接收队列数
 }
 
